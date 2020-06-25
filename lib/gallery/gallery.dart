@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reto2_0/button_detail/button_detail.dart';
 import 'package:reto2_0/data/constants.dart';
 import 'package:reto2_0/data/data.dart';
 
@@ -29,11 +30,17 @@ getImagesList(type) {
 }
 
 imgText(image, t1, t2, t3) {
-  return Container(
-    margin: EdgeInsets.only(right: 30.0, bottom: 10.0),
-    child: Row(
-      children: <Widget>[imageF(image), texts(t1, t2, t3)],
-    ),
+  return Stack(
+    alignment: Alignment(0.9, 1.1),
+    children: <Widget>[
+      Container(
+        margin: EdgeInsets.only(right: 30.0, bottom: 10.0),
+        child: Row(
+          children: <Widget>[imageF(image), texts(t1, t2, t3)],
+        ),
+      ),
+      ButtonDetail(image, t1, t2, t3)
+    ],
   );
 }
 
